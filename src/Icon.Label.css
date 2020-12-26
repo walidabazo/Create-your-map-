@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'DroidKufiBold';
+    src: url('DroidKufiBold.ttf');
+}
+.leaflet-marker-icon-wrapper {
+    position: absolute;
+    z-index: 99999999;
+}
+
+.leaflet-marker-iconlabel {
+    z-index: 99999999;
+    font-family: 'DroidKufiBold';
+    font-size: 8px;
+    background: #fff;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    -moz-box-shadow: 0 3px 10px #888;
+    -webkit-box-shadow: 0 3px 14px #999;
+    box-shadow: 0 3px 10px #888;
+    display: block;
+    font: DroidKufiBold;
+    padding: 4px 6px;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+}
