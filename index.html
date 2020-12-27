@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>how to create map </title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+    <style type="text/css">
+        .leaflet-container{background-color:#c5e8ff;}
+        body, html {
+            margin: 0;
+            padding: 0;
+            width:100%;
+            height:100%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <style>
+    
+        .info {
+            padding: 6px 8px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            background: rgba(255,255,255,0.8);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+
+            .info h4 {
+                margin: 0 0 5px;
+                color: #777;
+            }
+
+        .legend {
+            text-align: left;
+            line-height: 18px;
+            color: #555;
+        }
+
+            .legend i {
+                width: 18px;
+                height: 18px;
+                float: left;
+                margin-right: 8px;
+                opacity: 0.7;
+            }
+    </style>
+    <div id="map" style="width: 100%; height: 100%"></div>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="walid.css" />
+    <script src="dist/leaflet.js"></script>
+    <script src="dist/leaflet.rotatedMarker.js"></script>
+
+    <link rel="stylesheet" href="src/Icon.Label.css" />
+
+    <script src="src/Icon.Label.js"></script>
+  
+    
+    <script src="src/Icon.Label.Default.js"></script>
+
+
+    <script>
+        var map = L.map('map').setView([39.74739, -105], 4);
+
+
+      
+
+
+     
+
+
+        L.tileLayer('Egypt/{z}/{x}/{y}.png', {
+            maxZoom: 11,
+            minZoom: 2,
+            tileSize: 512,
+            zoomOffset: -1
+        }).addTo(map);
+   
+
+        //function onLocationFound(e) {
+        //   var radius = e.accuracy / 2;
+
+        //   L.marker(e.latlng, { icon: new icon_gov() }).addTo(map)
+        //      .bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+        //    L.circle(e.latlng, radius).addTo(map);
+        //}
+
+        //function onLocationError(e) {
+        //    alert(e.message);
+        //}
+
+        //map.on('locationfound', onLocationFound);
+        //map.on('locationerror', onLocationError);
+
+        //map.locate({ setView: true, maxZoom: 16 });
+        
+    </script>
+</body>
+</html>
