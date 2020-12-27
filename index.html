@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>how to create map </title>
@@ -66,33 +66,79 @@
 
 
     <script>
-        var map = L.map('map').setView([39.74739, -105], 4);
+        var map = L.map('map').setView([30.354086618820002, 30.9578856290658], 3);
 
 
       
 
 
-     
+        map.attributionControl.addAttribution('&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors & Develop by &copy; <a href="https://edafait.com/">walid abdelazeem</a>');
 
 
         L.tileLayer('Egypt/{z}/{x}/{y}.png', {
-            maxZoom: 11,
-            minZoom: 2,
+            maxZoom: 13,
+            minZoom: 3,
             tileSize: 512,
             zoomOffset: -1
         }).addTo(map);
-   
-      //  var icon= L.Icon.Label.extend({
-      //      options: {
-      //          iconUrl: '1.png',
-      //          shadowUrl: null,
-      //          iconSize: new L.Point(0, 0),
-      //          iconAnchor: new L.Point(0, 1),
-      //          labelAnchor: new L.Point(-136, -3),
-      //          wrapperAnchor: new L.Point(12, 13),
-      //          labelClassName: 'my-label_gov'
-      //      }
-      //  });
+
+
+        L.tileLayer('AUST/{z}/{x}/{y}.png', {
+            maxZoom: 13,
+            minZoom: 3,
+            tileSize: 512,
+            zoomOffset: -1
+        }).addTo(map);
+
+
+
+        var LeafIcon = L.Icon.extend({
+            options: {
+                shadowUrl: 'Marker/leaf-shadow.png',
+                iconSize: [38, 95],
+                shadowSize: [50, 64],
+                iconAnchor: [22, 94],
+                shadowAnchor: [4, 62],
+                popupAnchor: [-3, -76]
+            }
+        });
+
+        var greenIcon = new LeafIcon({ iconUrl: 'Marker/leaf-green.png' });
+
+        L.marker([30.354086618820002, 30.9578856290658], { icon: greenIcon }).addTo(map)
+            .bindPopup("<b>Hello world!</b><br />I am a popup in EGYPT <br /> <img src='Marker/leaf-green.png' />.").openPopup();
+
+
+
+        var LeafIcon_2 = L.Icon.extend({
+            options: {
+                
+                iconSize: [50, 82],
+                shadowSize: [50, 64],
+                iconAnchor: [22, 94],
+                shadowAnchor: [4, 62],
+                popupAnchor: [-3, -76]
+            }
+        });
+
+
+        
+        var markers_icon = new LeafIcon_2 ({ iconUrl: 'Marker/marker-icon-2x.png' });
+
+        L.marker([-26.64991293944776, 153.06281312253793], { icon: markers_icon }).addTo(map)
+            .bindPopup("<b>Hello world !</b><br />I am a popup in AUST.").openPopup();
+
+        //        var icon = L.Icon.Label.extend({
+        //    options: {
+        //        iconUrl: '1.png',
+        //        shadowUrl: null,
+        //        iconSize: new L.Point(0, 0),
+        //        iconAnchor: new L.Point(0, 1),
+        //        labelAnchor: new L.Point(-136, -3),
+        //        wrapperAnchor: new L.Point(12, 13),
+        //        labelClassName: 'my-label_gov'
+        //    }
+        //});
         //function onLocationFound(e) {
         //   var radius = e.accuracy / 2;
 
@@ -109,7 +155,7 @@
         //map.on('locationfound', onLocationFound);
         //map.on('locationerror', onLocationError);
 
-        //map.locate({ setView: true, maxZoom: 16 });
+        //map.locate({ setView: true, maxZoom: 13 });
         
     </script>
 </body>
